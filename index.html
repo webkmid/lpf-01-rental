@@ -3,13 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LPF Rental — Sewa Mobil & Motor Mudah</title>
+    <title>BaliRent — Sewa Mobil & Motor Mudah & Terpercaya</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://i.ibb.co.com/7NVDMFy0/image.png"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
       html {
         scroll-behavior: smooth;
       }
@@ -19,8 +30,8 @@
         transition: all 0.3s ease;
       }
       .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
       }
 
       /* Modal */
@@ -58,237 +69,173 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
+
+      /* Gradient Backgrounds */
+      .hero-gradient {
+        background: linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.7) 0%,
+            rgba(0, 0, 0, 0.9) 100%
+          ),
+          url("https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1920&auto=format&fit=crop")
+            no-repeat center center;
+        background-size: cover;
+      }
+
+      .benefit-card:hover {
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      }
     </style>
   </head>
-
   <body class="bg-gray-50 text-gray-800">
     <!-- Navbar -->
     <header
-      class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow z-50"
+      class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50"
     >
       <div
-        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center"
       >
-        <h1 class="text-2xl font-bold text-blue-600">LPF Rental</h1>
+        <a href="#hero" class="flex items-center space-x-2">
+          <div
+            class="w-10 h-10 bg-blue-600 rounded-md flex items-center justify-center"
+          >
+            <i class="fas fa-car text-white text-lg"></i>
+          </div>
+          <h1 class="text-2xl font-bold text-blue-600">BaliRent</h1>
+        </a>
+
+        <!-- Navbar untuk Desktop -->
         <nav class="hidden md:flex space-x-8 font-medium text-gray-700">
-          <a href="#hero" class="hover:text-blue-600">Beranda</a>
-          <a href="#mobil" class="hover:text-blue-600">Mobil</a>
-          <a href="#motor" class="hover:text-blue-600">Motor</a>
-          <a href="#testimoni" class="hover:text-blue-600">Testimoni</a>
-          <a href="#lokasi" class="hover:text-blue-600">Lokasi</a>
+          <a href="#hero" class="hover:text-blue-600 transition">Beranda</a>
+          <a href="#mobil" class="hover:text-blue-600 transition">Mobil</a>
+          <a href="#motor" class="hover:text-blue-600 transition">Motor</a>
+          <a href="#testimoni" class="hover:text-blue-600 transition"
+            >Testimoni</a
+          >
+          <a href="#lokasi" class="hover:text-blue-600 transition">Lokasi</a>
         </nav>
+
+        <!-- Ikon Burger untuk Mobile -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-gray-700 focus:outline-none"
+        >
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+
+        <a
+          href="https://wa.me/6281234567890"
+          target="_blank"
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium transition flex items-center"
+        >
+          <i class="fab fa-whatsapp mr-2"></i> Chat
+        </a>
+      </div>
+
+      <!-- Menu Mobile (Tersembunyi secara default) -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-white absolute top-full left-0 right-0 shadow-lg z-10 py-2 px-4"
+      >
+        <a href="#hero" class="block py-2 hover:text-blue-600">Beranda</a>
+        <a href="#mobil" class="block py-2 hover:text-blue-600">Mobil</a>
+        <a href="#motor" class="block py-2 hover:text-blue-600">Motor</a>
+        <a href="#testimoni" class="block py-2 hover:text-blue-600"
+          >Testimoni</a
+        >
+        <a href="#lokasi" class="block py-2 hover:text-blue-600">Lokasi</a>
       </div>
     </header>
 
     <!-- Hero -->
     <section
       id="hero"
-      class="h-screen flex flex-col justify-center items-center text-center bg-[url('https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center relative text-white"
+      class="h-screen flex flex-col justify-center items-center text-center relative text-white hero-gradient"
     >
-      <div class="absolute inset-0 bg-black/50"></div>
-      <div class="relative z-10 px-6">
-        <h2 class="text-5xl font-extrabold mb-4 drop-shadow-lg">
+      <div class="relative z-10 px-4 max-w-4xl">
+        <h2
+          class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight"
+        >
           Sewa Mobil & Motor Jadi Lebih Mudah 🚗🏍️
         </h2>
-        <p class="text-lg mb-6 max-w-2xl mx-auto">
+        <p class="text-base md:text-lg mb-6 max-w-xl mx-auto text-slate-200">
           Nikmati perjalanan tanpa repot dengan layanan rental terpercaya kami.
         </p>
-        <a
-          href="https://wa.me/6281234567890"
-          target="_blank"
-          class="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-full text-white font-semibold shadow-lg transition transform hover:scale-105"
-        >
-          <i class="fab fa-whatsapp mr-2"></i> Chat via WhatsApp
-        </a>
-      </div>
-    </section>
-
-    <!-- Lineup Mobil -->
-    <section id="mobil" class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-8 text-gray-800">
-          Pilihan Mobil Kami
-        </h2>
-
-        <div
-          class="flex overflow-x-auto scrollbar-hide space-x-6 pb-4 snap-x snap-mandatory"
-        >
-          <div
-            class="flex space-x-6 snap-x snap-mandatory overflow-visible py-4"
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="#mobil"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2.5 rounded-full shadow-lg transition transform hover:scale-105"
           >
-            <div
-              class="card snap-center min-w-[280px] max-w-[280px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
-              data-type="mobil"
-              data-name="Avanza"
-              data-facilities="Full AC, Audio, USB Port, Driver"
-            >
-              <!-- Gambar -->
-              <div class="relative h-48 w-full bg-gray-200">
-                <img
-                  src="https://images.unsplash.com/photo-1683729133363-4ea64ec97c0e?q=100&w=600&auto=format&fit=crop"
-                  alt="Toyota Avanza"
-                  class="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-
-              <!-- Isi -->
-              <div class="p-4 flex flex-col flex-grow justify-between">
-                <div>
-                  <h3 class="font-semibold text-lg text-gray-900">
-                    Toyota Avanza
-                  </h3>
-                  <p class="text-blue-600 font-bold text-sm">
-                    Rp 450.000 / Hari
-                  </p>
-                </div>
-                <div class="mt-3"></div>
-              </div>
-            </div>
-
-            <div
-              class="card snap-center min-w-[280px] max-w-[280px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
-              data-type="mobil"
-              data-name="Avanza"
-              data-facilities="Full AC, Audio, USB Port, Driver"
-            >
-              <!-- Gambar -->
-              <div class="relative h-48 w-full bg-gray-200">
-                <img
-                  src="https://images.unsplash.com/photo-1661051225745-a980b687efa3?q=80&w=800&auto=format&fit=crop"
-                  alt="Toyota Avanza"
-                  class="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-
-              <!-- Isi -->
-              <div class="p-4 flex flex-col flex-grow justify-between">
-                <div>
-                  <h3 class="font-semibold text-lg text-gray-900">
-                    Toyota Avanza
-                  </h3>
-                  <p class="text-blue-600 font-bold text-sm">
-                    Rp 450.000 / Hari
-                  </p>
-                </div>
-                <div class="mt-3"></div>
-              </div>
-            </div>
-
-            <div
-              class="card snap-center min-w-[280px] max-w-[280px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
-              data-type="mobil"
-              data-name="Avanza"
-              data-facilities="Full AC, Audio, USB Port, Driver"
-            >
-              <!-- Gambar -->
-              <div class="relative h-48 w-full bg-gray-200">
-                <img
-                  src="https://images.unsplash.com/photo-1604505297763-88cd7705316b?q=80&w=800&auto=format&fit=crop"
-                  alt="Toyota Avanza"
-                  class="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-
-              <!-- Isi -->
-              <div class="p-4 flex flex-col flex-grow justify-between">
-                <div>
-                  <h3 class="font-semibold text-lg text-gray-900">
-                    Toyota Avanza
-                  </h3>
-                  <p class="text-blue-600 font-bold text-sm">
-                    Rp 450.000 / Hari
-                  </p>
-                </div>
-                <div class="mt-3"></div>
-              </div>
-            </div>
-
-            <div
-              class="card snap-center min-w-[280px] max-w-[280px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
-              data-type="mobil"
-              data-name="Avanza"
-              data-facilities="Full AC, Audio, USB Port, Driver"
-            >
-              <!-- Gambar -->
-              <div class="relative h-48 w-full bg-gray-200">
-                <img
-                  src="https://images.unsplash.com/photo-1683729133363-4ea64ec97c0e?q=100&w=600&auto=format&fit=crop"
-                  alt="Toyota Avanza"
-                  class="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-
-              <!-- Isi -->
-              <div class="p-4 flex flex-col flex-grow justify-between">
-                <div>
-                  <h3 class="font-semibold text-lg text-gray-900">
-                    Toyota Avanza
-                  </h3>
-                  <p class="text-blue-600 font-bold text-sm">
-                    Rp 450.000 / Hari
-                  </p>
-                </div>
-                <div class="mt-3"></div>
-              </div>
-            </div>
-
-            <div
-              class="card snap-center min-w-[280px] max-w-[280px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
-              data-type="mobil"
-              data-name="Avanza"
-              data-facilities="Full AC, Audio, USB Port, Driver"
-            >
-              <!-- Gambar -->
-              <div class="relative h-48 w-full bg-gray-200">
-                <img
-                  src="https://images.unsplash.com/photo-1604505297763-88cd7705316b?q=80&w=800&auto=format&fit=crop"
-                  alt="Toyota Avanza"
-                  class="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-
-              <!-- Isi -->
-              <div class="p-4 flex flex-col flex-grow justify-between">
-                <div>
-                  <h3 class="font-semibold text-lg text-gray-900">
-                    Toyota Avanza
-                  </h3>
-                  <p class="text-blue-600 font-bold text-sm">
-                    Rp 450.000 / Hari
-                  </p>
-                </div>
-                <div class="mt-3"></div>
-              </div>
-            </div>
-          </div>
+            Lihat Kendaraan
+          </a>
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2.5 rounded-full shadow-lg transition flex items-center justify-center"
+          >
+            <i class="fab fa-whatsapp mr-2"></i> Hubungi Kami
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Keuntungan -->
-    <section class="py-16 bg-gray-100">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-8">Kenapa Sewa di Tempat Kami?</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-xl shadow">
-            <i class="fa-solid fa-user-tie text-3xl text-blue-600 mb-3"></i>
-            <h4 class="font-semibold mb-2">Sopir Profesional</h4>
+    <section class="py-16 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold mb-3 text-gray-800">
+            Kenapa Sewa di BaliRent?
+          </h2>
+          <p class="text-gray-600 max-w-xl mx-auto text-sm md:text-base">
+            Kami memberikan layanan terbaik untuk kenyamanan dan kepuasan Anda
+            selama liburan di Bali.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Benefit 1 -->
+          <div
+            class="benefit-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center"
+          >
+            <div
+              class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3"
+            >
+              <i class="fa-solid fa-user-tie text-xl text-blue-600"></i>
+            </div>
+            <h4 class="font-bold text-base md:text-lg mb-1 text-gray-800">
+              Sopir Profesional
+            </h4>
             <p class="text-gray-600 text-sm">
               Pengemudi berpengalaman & ramah siap menemani perjalanan Anda.
             </p>
           </div>
-          <div class="bg-white p-6 rounded-xl shadow">
-            <i class="fa-solid fa-car-side text-3xl text-blue-600 mb-3"></i>
-            <h4 class="font-semibold mb-2">Unit Terawat</h4>
+          <!-- Benefit 2 -->
+          <div
+            class="benefit-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center"
+          >
+            <div
+              class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3"
+            >
+              <i class="fa-solid fa-car-side text-xl text-blue-600"></i>
+            </div>
+            <h4 class="font-bold text-base md:text-lg mb-1 text-gray-800">
+              Unit Terawat
+            </h4>
             <p class="text-gray-600 text-sm">
               Semua kendaraan rutin servis untuk kenyamanan maksimal.
             </p>
           </div>
-          <div class="bg-white p-6 rounded-xl shadow">
-            <i
-              class="fa-solid fa-map-marker-alt text-3xl text-blue-600 mb-3"
-            ></i>
-            <h4 class="font-semibold mb-2">Antar Jemput Gratis</h4>
+          <!-- Benefit 3 -->
+          <div
+            class="benefit-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center"
+          >
+            <div
+              class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3"
+            >
+              <i class="fa-solid fa-map-marker-alt text-xl text-blue-600"></i>
+            </div>
+            <h4 class="font-bold text-base md:text-lg mb-1 text-gray-800">
+              Antar Jemput Gratis
+            </h4>
             <p class="text-gray-600 text-sm">
               Layanan antar jemput area kota tanpa biaya tambahan.
             </p>
@@ -297,161 +244,297 @@
       </div>
     </section>
 
-    <!-- Lineup Motor -->
-    <section id="motor" class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-8 text-gray-800">
-          Pilihan Motor Kami
-        </h2>
+    <!-- Lineup Mobil -->
+    <section id="mobil" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl md:text-3xl font-bold mb-3 text-gray-800">
+            Pilihan Mobil Kami
+          </h2>
+          <p class="text-gray-600 max-w-xl mx-auto text-sm md:text-base">
+            Temukan mobil yang sesuai dengan kebutuhan Anda untuk menjelajahi
+            Bali.
+          </p>
+        </div>
 
-        <div
-          class="flex overflow-x-auto scrollbar-hide space-x-6 pb-4 snap-x snap-mandatory"
-        >
-          <div
-            class="flex space-x-6 snap-x snap-mandatory overflow-visible py-4"
-          >
+        <!-- Scrollable Container -->
+        <div class="overflow-x-auto scrollbar-hide pb-6">
+          <div class="flex space-x-4 snap-x snap-mandatory py-4 min-w-max">
+            <!-- Card 1 -->
             <div
-              class="card snap-center min-w-[280px] max-w-[280px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
-              data-type="motor"
-              data-name="Beat"
-              data-facilities="Irit, Helm, Jas Hujan"
-            >
-              <!-- Gambar -->
-              <div class="relative h-48 w-full bg-gray-200">
-                <img
-                  src="https://images.unsplash.com/photo-1588627541420-fce3f661b779?q=100&w=600&auto=format&fit=crop"
-                  alt="Honda Beat"
-                  class="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-
-              <!-- Isi -->
-              <div class="p-4 flex flex-col flex-grow justify-between">
-                <div>
-                  <h3 class="font-semibold text-lg text-gray-900">
-                    Honda Beat
-                  </h3>
-                  <p class="text-blue-600 font-bold text-sm">
-                    Rp 80.000 / Hari
-                  </p>
-                </div>
-                <div class="mt-3"></div>
-              </div>
-            </div>
-
-            <div
-              class="card snap-center min-w-[280px] max-w-[280px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
+              class="card snap-start min-w-[260px] max-w-[260px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
               data-type="mobil"
-              data-name="Vespa"
-              data-facilities="Classic, Helm, Jas Hujan"
-            >
-              <!-- Gambar -->
-              <div class="relative h-48 w-full bg-gray-200">
-                <img
-                  src="https://images.unsplash.com/photo-1724300821187-00736989bd67?q=80&w=800&auto=format&fit=crop"
-                  alt="Vespa Matic"
-                  class="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-
-              <!-- Isi -->
-              <div class="p-4 flex flex-col flex-grow justify-between">
-                <div>
-                  <h3 class="font-semibold text-lg text-gray-900">
-                    Vespa Matic
-                  </h3>
-                  <p class="text-blue-600 font-bold text-sm">
-                    Rp 120.000 / Hari
-                  </p>
-                </div>
-                <div class="mt-3"></div>
-              </div>
-            </div>
-
-            <div
-              class="card snap-center min-w-[280px] max-w-[280px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
-              data-type="mobil"
-              data-name="Avanza"
+              data-name="Toyota Avanza"
               data-facilities="Full AC, Audio, USB Port, Driver"
+              data-price="Rp 450.000 / Hari"
+              data-description="Mobil keluarga yang nyaman dan irit bahan bakar, cocok untuk perjalanan jarak jauh."
             >
-              <!-- Gambar -->
-              <div class="relative h-48 w-full bg-gray-200">
-                <img
-                  src="https://images.unsplash.com/photo-1604505297763-88cd7705316b?q=80&w=800&auto=format&fit=crop"
-                  alt="Toyota Avanza"
-                  class="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-
-              <!-- Isi -->
-              <div class="p-4 flex flex-col flex-grow justify-between">
-                <div>
-                  <h3 class="font-semibold text-lg text-gray-900">
-                    Toyota Avanza
-                  </h3>
-                  <p class="text-blue-600 font-bold text-sm">
-                    Rp 450.000 / Hari
-                  </p>
-                </div>
-                <div class="mt-3"></div>
-              </div>
-            </div>
-
-            <div
-              class="card snap-center min-w-[280px] max-w-[280px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
-              data-type="mobil"
-              data-name="Avanza"
-              data-facilities="Full AC, Audio, USB Port, Driver"
-            >
-              <!-- Gambar -->
-              <div class="relative h-48 w-full bg-gray-200">
+              <div class="relative h-40 w-full bg-gray-200">
                 <img
                   src="https://images.unsplash.com/photo-1683729133363-4ea64ec97c0e?q=100&w=600&auto=format&fit=crop"
                   alt="Toyota Avanza"
                   class="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
-
-              <!-- Isi -->
-              <div class="p-4 flex flex-col flex-grow justify-between">
+              <div class="p-3 flex flex-col flex-grow justify-between">
                 <div>
-                  <h3 class="font-semibold text-lg text-gray-900">
+                  <h3 class="font-semibold text-base text-gray-900">
                     Toyota Avanza
                   </h3>
-                  <p class="text-blue-600 font-bold text-sm">
+                  <p class="text-blue-600 font-bold text-sm mt-1">
                     Rp 450.000 / Hari
                   </p>
                 </div>
-                <div class="mt-3"></div>
+                <div class="mt-2"></div>
               </div>
             </div>
 
+            <!-- Card 2 -->
             <div
-              class="card snap-center min-w-[280px] max-w-[280px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
+              class="card snap-start min-w-[260px] max-w-[260px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
               data-type="mobil"
-              data-name="Avanza"
-              data-facilities="Full AC, Audio, USB Port, Driver"
+              data-name="Toyota Innova"
+              data-facilities="Full AC, Audio, USB Port, Driver, Kursi Empuk"
+              data-price="Rp 650.000 / Hari"
+              data-description="Mobil MPV premium yang luas dan nyaman untuk perjalanan keluarga besar."
             >
-              <!-- Gambar -->
-              <div class="relative h-48 w-full bg-gray-200">
+              <div class="relative h-40 w-full bg-gray-200">
                 <img
-                  src="https://images.unsplash.com/photo-1604505297763-88cd7705316b?q=80&w=800&auto=format&fit=crop"
-                  alt="Toyota Avanza"
+                  src="https://images.unsplash.com/photo-1661051225745-a980b687efa3?q=80&w=800&auto=format&fit=crop"
+                  alt="Toyota Innova"
                   class="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
-
-              <!-- Isi -->
-              <div class="p-4 flex flex-col flex-grow justify-between">
+              <div class="p-3 flex flex-col flex-grow justify-between">
                 <div>
-                  <h3 class="font-semibold text-lg text-gray-900">
-                    Toyota Avanza
+                  <h3 class="font-semibold text-base text-gray-900">
+                    Toyota Innova
                   </h3>
-                  <p class="text-blue-600 font-bold text-sm">
+                  <p class="text-blue-600 font-bold text-sm mt-1">
+                    Rp 650.000 / Hari
+                  </p>
+                </div>
+                <div class="mt-2"></div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="card snap-start min-w-[260px] max-w-[260px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
+              data-type="mobil"
+              data-name="Honda CR-V"
+              data-facilities="Full AC, Audio, USB Port, Driver, GPS, Kamera Mundur"
+              data-price="Rp 750.000 / Hari"
+              data-description="SUV tangguh dengan fitur modern untuk perjalanan off-road dan kota."
+            >
+              <div class="relative h-40 w-full bg-gray-200">
+                <img
+                  src="https://images.unsplash.com/photo-1604505297763-88cd7705316b?q=80&w=800&auto=format&fit=crop"
+                  alt="Honda CR-V"
+                  class="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-3 flex flex-col flex-grow justify-between">
+                <div>
+                  <h3 class="font-semibold text-base text-gray-900">
+                    Honda CR-V
+                  </h3>
+                  <p class="text-blue-600 font-bold text-sm mt-1">
+                    Rp 750.000 / Hari
+                  </p>
+                </div>
+                <div class="mt-2"></div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+              class="card snap-start min-w-[260px] max-w-[260px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
+              data-type="mobil"
+              data-name="Toyota Fortuner"
+              data-facilities="Full AC, Audio, USB Port, Driver, 4WD, Kamera Mundur"
+              data-price="Rp 900.000 / Hari"
+              data-description="SUV premium yang tangguh dan mewah, ideal untuk perjalanan petualangan."
+            >
+              <div class="relative h-40 w-full bg-gray-200">
+                <img
+                  src="https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=800&auto=format&fit=crop"
+                  alt="Toyota Fortuner"
+                  class="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-3 flex flex-col flex-grow justify-between">
+                <div>
+                  <h3 class="font-semibold text-base text-gray-900">
+                    Toyota Fortuner
+                  </h3>
+                  <p class="text-blue-600 font-bold text-sm mt-1">
+                    Rp 900.000 / Hari
+                  </p>
+                </div>
+                <div class="mt-2"></div>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div
+              class="card snap-start min-w-[260px] max-w-[260px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
+              data-type="mobil"
+              data-name="BMW X3"
+              data-facilities="Full AC, Audio, USB Port, Driver, Navigasi, Kursi Kulit"
+              data-price="Rp 1.200.000 / Hari"
+              data-description="SUV mewah dengan performa tinggi dan kenyamanan luar biasa."
+            >
+              <div class="relative h-40 w-full bg-gray-200">
+                <img
+                  src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop"
+                  alt="BMW X3"
+                  class="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-3 flex flex-col flex-grow justify-between">
+                <div>
+                  <h3 class="font-semibold text-base text-gray-900">BMW X3</h3>
+                  <p class="text-blue-600 font-bold text-sm mt-1">
+                    Rp 1.200.000 / Hari
+                  </p>
+                </div>
+                <div class="mt-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lineup Motor -->
+    <section id="motor" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl md:text-3xl font-bold mb-3 text-gray-800">
+            Pilihan Motor Kami
+          </h2>
+          <p class="text-gray-600 max-w-xl mx-auto text-sm md:text-base">
+            Rasakan kebebasan menjelajah Bali dengan motor pilihan kami.
+          </p>
+        </div>
+
+        <!-- Scrollable Container -->
+        <div class="overflow-x-auto scrollbar-hide pb-6">
+          <div class="flex space-x-4 snap-x snap-mandatory py-4 min-w-max">
+            <!-- Card 1 -->
+            <div
+              class="card snap-start min-w-[260px] max-w-[260px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
+              data-type="motor"
+              data-name="Yamaha R1"
+              data-facilities="Irit, Helm, Jas Hujan, GPS"
+              data-price="Rp 500.000 / Hari"
+              data-description="Motor sport berperforma tinggi, ideal untuk penggemar kecepatan."
+            >
+              <div class="relative h-40 w-full bg-gray-200">
+                <img
+                  src="https://images.unsplash.com/photo-1588627541420-fce3f661b779?q=100&w=600&auto=format&fit=crop"
+                  alt="Yamaha R1"
+                  class="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-3 flex flex-col flex-grow justify-between">
+                <div>
+                  <h3 class="font-semibold text-base text-gray-900">
+                    Yamaha R1
+                  </h3>
+                  <p class="text-blue-600 font-bold text-sm mt-1">
+                    Rp 500.000 / Hari
+                  </p>
+                </div>
+                <div class="mt-2"></div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="card snap-start min-w-[260px] max-w-[260px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
+              data-type="motor"
+              data-name="Vespa Matic"
+              data-facilities="Classic, Helm, Jas Hujan, Tas Belakang"
+              data-price="Rp 120.000 / Hari"
+              data-description="Skuter klasik yang stylish dan mudah dikendarai di kota."
+            >
+              <div class="relative h-40 w-full bg-gray-200">
+                <img
+                  src="https://images.unsplash.com/photo-1724300821187-00736989bd67?q=80&w=800&auto=format&fit=crop"
+                  alt="Vespa Matic"
+                  class="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-3 flex flex-col flex-grow justify-between">
+                <div>
+                  <h3 class="font-semibold text-base text-gray-900">
+                    Vespa Matic
+                  </h3>
+                  <p class="text-blue-600 font-bold text-sm mt-1">
+                    Rp 120.000 / Hari
+                  </p>
+                </div>
+                <div class="mt-2"></div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="card snap-start min-w-[260px] max-w-[260px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
+              data-type="motor"
+              data-name="Yamaha R6"
+              data-facilities="Irit, Helm, Jas Hujan, GPS, Kaca Spion"
+              data-price="Rp 450.000 / Hari"
+              data-description="Motor sport ringan dengan performa luar biasa di jalan raya."
+            >
+              <div class="relative h-40 w-full bg-gray-200">
+                <img
+                  src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?q=80&w=800&auto=format&fit=crop"
+                  alt="Yamaha R6"
+                  class="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-3 flex flex-col flex-grow justify-between">
+                <div>
+                  <h3 class="font-semibold text-base text-gray-900">
+                    Yamaha R6
+                  </h3>
+                  <p class="text-blue-600 font-bold text-sm mt-1">
                     Rp 450.000 / Hari
                   </p>
                 </div>
-                <div class="mt-3"></div>
+                <div class="mt-2"></div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+              class="card snap-start min-w-[260px] max-w-[260px] bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transform transition-all hover:scale-[1.02]"
+              data-type="motor"
+              data-name="Harley Davidson"
+              data-facilities="Irit, Helm, Jas Hujan, GPS, Tempat Duduk Empuk"
+              data-price="Rp 600.000 / Hari"
+              data-description="Motor klasik legendaris dengan suara mesin yang menggelegar."
+            >
+              <div class="relative h-40 w-full bg-gray-200">
+                <img
+                  src="https://images.unsplash.com/photo-1558981033-0f0309284409?q=100&w=600&auto=format&fit=crop"
+                  alt="Harley Davidson"
+                  class="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-3 flex flex-col flex-grow justify-between">
+                <div>
+                  <h3 class="font-semibold text-base text-gray-900">
+                    Harley Davidson
+                  </h3>
+                  <p class="text-blue-600 font-bold text-sm mt-1">
+                    Rp 600.000 / Hari
+                  </p>
+                </div>
+                <div class="mt-2"></div>
               </div>
             </div>
           </div>
@@ -460,58 +543,133 @@
     </section>
 
     <!-- Testimoni -->
-    <section id="testimoni" class="py-20 bg-gray-100">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-8">Testimoni Pelanggan</h2>
+    <section
+      id="testimoni"
+      class="py-16 bg-gradient-to-br from-slate-100 to-slate-200"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl md:text-3xl font-bold mb-3 text-gray-800">
+            Testimoni Pelanggan
+          </h2>
+          <p class="text-gray-600 max-w-xl mx-auto text-sm md:text-base">
+            Pendapat mereka yang telah menggunakan layanan kami.
+          </p>
+        </div>
+
         <div
-          class="flex overflow-x-auto scrollbar-hide space-x-6 pb-4 snap-x snap-mandatory"
+          class="flex overflow-x-auto scrollbar-hide space-x-4 pb-4 snap-x snap-mandatory"
         >
           <div
-            class="flex space-x-6 snap-x snap-mandatory overflow-visible py-4"
+            class="flex space-x-4 snap-x snap-mandatory overflow-visible py-4 min-w-max"
           >
             <div
-              class="card snap-center bg-white p-6 rounded-xl shadow-md min-w-[300px]"
+              class="card snap-center bg-white p-5 rounded-xl shadow-md min-w-[280px]"
             >
-              <p class="italic text-gray-600 mb-2">
+              <div class="flex items-center mb-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 font-bold mr-3"
+                >
+                  R
+                </div>
+                <div>
+                  <h4 class="font-semibold text-sm md:text-base text-gray-800">
+                    Rina, Bandung
+                  </h4>
+                  <div class="flex text-yellow-400">
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="italic text-gray-600 text-sm">
                 "Mobil bersih dan pelayanan cepat. Recommended banget!"
               </p>
-              <h4 class="font-semibold text-gray-800">— Rina, Bandung</h4>
             </div>
 
             <div
-              class="card snap-center bg-white p-6 rounded-xl shadow-md min-w-[300px]"
+              class="card snap-center bg-white p-5 rounded-xl shadow-md min-w-[280px]"
             >
-              <p class="italic text-gray-600 mb-2">
+              <div class="flex items-center mb-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 font-bold mr-3"
+                >
+                  D
+                </div>
+                <div>
+                  <h4 class="font-semibold text-sm md:text-base text-gray-800">
+                    Dimas, Bali
+                  </h4>
+                  <div class="flex text-yellow-400">
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="italic text-gray-600 text-sm">
                 "Motor irit dan mudah diatur, cocok untuk liburan singkat!"
               </p>
-              <h4 class="font-semibold text-gray-800">— Dimas, Bali</h4>
             </div>
 
             <div
-              class="card snap-center bg-white p-6 rounded-xl shadow-md min-w-[300px]"
+              class="card snap-center bg-white p-5 rounded-xl shadow-md min-w-[280px]"
             >
-              <p class="italic text-gray-600 mb-2">
-                "Mobil bersih dan pelayanan cepat. Recommended banget!"
+              <div class="flex items-center mb-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 font-bold mr-3"
+                >
+                  A
+                </div>
+                <div>
+                  <h4 class="font-semibold text-sm md:text-base text-gray-800">
+                    Ardi, Jakarta
+                  </h4>
+                  <div class="flex text-yellow-400">
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star-half-alt text-xs"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="italic text-gray-600 text-sm">
+                "Proses booking mudah dan sopirnya ramah. Puas!"
               </p>
-              <h4 class="font-semibold text-gray-800">— Rina, Bandung</h4>
             </div>
 
             <div
-              class="card snap-center bg-white p-6 rounded-xl shadow-md min-w-[300px]"
+              class="card snap-center bg-white p-5 rounded-xl shadow-md min-w-[280px]"
             >
-              <p class="italic text-gray-600 mb-2">
-                "Motor irit dan mudah diatur, cocok untuk liburan singkat!"
+              <div class="flex items-center mb-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 font-bold mr-3"
+                >
+                  S
+                </div>
+                <div>
+                  <h4 class="font-semibold text-sm md:text-base text-gray-800">
+                    Sinta, Surabaya
+                  </h4>
+                  <div class="flex text-yellow-400">
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                    <i class="fas fa-star text-xs"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="italic text-gray-600 text-sm">
+                "Harga terjangkau, kendaraan dalam kondisi prima. Pasti sewa
+                lagi!"
               </p>
-              <h4 class="font-semibold text-gray-800">— Dimas, Bali</h4>
-            </div>
-
-            <div
-              class="card snap-center bg-white p-6 rounded-xl shadow-md min-w-[300px]"
-            >
-              <p class="italic text-gray-600 mb-2">
-                "Mobil bersih dan pelayanan cepat. Recommended banget!"
-              </p>
-              <h4 class="font-semibold text-gray-800">— Rina, Bandung</h4>
             </div>
           </div>
         </div>
@@ -519,93 +677,210 @@
     </section>
 
     <!-- Lokasi -->
-    <section id="lokasi" class="py-20 bg-white">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-6">Lokasi Kami</h2>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.281961706732!2d110.36270527462196!3d-7.860270392231734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5783bda2b5a5%3A0x8a6a7a4e4a68b58b!2sYogyakarta!5e0!3m2!1sid!2sid!4v1699832332294!5m2!1sid!2sid"
-          width="100%"
-          height="350"
-          class="rounded-xl shadow"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
+    <section id="lokasi" class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl md:text-3xl font-bold mb-3 text-gray-800">
+            Lokasi Kami
+          </h2>
+          <p class="text-gray-600 max-w-xl mx-auto text-sm md:text-base">
+            Temukan kami di lokasi strategis di Bali.
+          </p>
+        </div>
+        <div
+          class="bg-gray-200 rounded-xl overflow-hidden shadow-xl h-64 md:h-96"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23462.53341709646!2d115.17251210631197!3d-8.721835113751338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd246bc2ab70d43%3A0x82feaae12f4ab48e!2sPantai%20Kuta!5e0!3m2!1sid!2sid!4v1760481501453!5m2!1sid!2sid"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-blue-800 text-white py-10">
-      <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div>
-          <h3 class="text-white text-xl font-semibold mb-4">About</h3>
+    <!-- FOOTER -->
+    <footer
+      class="bg-gradient-to-br from-blue-800 to-blue-600 text-white pt-12 pb-6"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <!-- about -->
+          <div>
+            <a href="#hero" class="flex items-center space-x-2 mb-3">
+              <div
+                class="w-10 h-10 bg-white rounded-md flex items-center justify-center"
+              >
+                <i class="fas fa-car text-blue-600 text-lg"></i>
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold">BaliRent</h3>
+            </a>
+            <p class="text-sky-200 text-xs md:text-sm leading-relaxed">
+              Menyediakan layanan sewa mobil dan motor terbaik di Bali untuk
+              liburan Anda.
+            </p>
+          </div>
+
+          <!-- quick links -->
+          <div>
+            <h4 class="font-semibold text-base md:text-lg mb-3">
+              Navigasi Cepat
+            </h4>
+            <ul class="space-y-1 text-sky-200 text-sm">
+              <li>
+                <a href="#mobil" class="hover:text-white transition">Mobil</a>
+              </li>
+              <li>
+                <a href="#motor" class="hover:text-white transition">Motor</a>
+              </li>
+              <li>
+                <a href="#testimoni" class="hover:text-white transition"
+                  >Testimoni</a
+                >
+              </li>
+              <li>
+                <a href="#lokasi" class="hover:text-white transition">Lokasi</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- social -->
+          <div>
+            <h4 class="font-semibold text-base md:text-lg mb-3">Ikuti Kami</h4>
+            <div class="flex items-center gap-3 mb-4">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                class="text-white hover:text-sky-300 transition"
+              >
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                class="text-white hover:text-sky-300 transition"
+              >
+                <i class="fab fa-youtube text-xl"></i>
+              </a>
+              <a
+                href="https://tiktok.com"
+                target="_blank"
+                class="text-white hover:text-sky-300 transition"
+              >
+                <i class="fab fa-tiktok text-xl"></i>
+              </a>
+            </div>
+            <p class="text-xs md:text-sm text-sky-200">
+              WhatsApp:
+              <a
+                href="https://wa.me/6281234567890"
+                class="underline hover:text-white transition"
+                >+62 812 3456 7890</a
+              >
+            </p>
+            <p class="text-xs md:text-sm text-sky-200 mt-1">
+              Email:
+              <a
+                href="mailto:info@balirent.id"
+                class="underline hover:text-white transition"
+                >info@balirent.id</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-sky-700 pt-4 text-center text-xs md:text-sm text-sky-300"
+        >
           <p>
-            RentalMobil menyediakan layanan sewa mobil terbaik untuk kebutuhan
-            bisnis maupun liburan Anda.
+            © 2025 <span class="font-semibold text-white">BaliRent</span>. Semua
+            Hak Dilindungi.
           </p>
-          <p class="mt-2">
-            WhatsApp:
-            <a href="https://wa.me/6281234567890" class="text-green-400"
-              >+62 812 3456 7890</a
+          <p class="mt-1 text-sky-400">
+            Powered by
+            <a
+              href="https://www.webkm.id"
+              class="text-white font-semibold hover:underline transition"
+              target="_blank"
+              >WebKM</a
             >
           </p>
-          <p>Alamat: Jl. Merdeka No.123, Jakarta</p>
-        </div>
-
-        <div>
-          <h3 class="text-white text-xl font-semibold mb-4">Quick Links</h3>
-          <ul>
-            <li><a href="#hero" class="hover:text-white">Home</a></li>
-            <li><a href="#mobil" class="hover:text-white">Mobil</a></li>
-            <li><a href="#motor" class="hover:text-white">Motor</a></li>
-            <li><a href="#testimoni" class="hover:text-white">Testimoni</a></li>
-            <li><a href="#lokasi" class="hover:text-white">Lokasi</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="text-white text-xl font-semibold mb-4">Social Media</h3>
-          <ul>
-            <li><a href="#" class="hover:text-white">Instagram</a></li>
-            <li><a href="#" class="hover:text-white">Facebook</a></li>
-            <li><a href="#" class="hover:text-white">TikTok</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="text-white text-xl font-semibold mb-4">Powered by</h3>
-          <a href="#hero" class="hover:text-white">WebKM</a>
         </div>
       </div>
-      <div class="text-center text-white mt-10">© 2025 WebKM</div>
     </footer>
 
-    <!-- Modal Fasilitas -->
+    <!-- Modal Detail Kendaraan -->
     <div
       id="modal"
       class="modal"
       onclick="if(event.target.id==='modal'){closeModal()}"
     >
-      <div class="bg-white p-6 rounded-xl max-w-md w-full text-center fade">
-        <h3 id="modalTitle" class="text-2xl font-bold mb-4"></h3>
-        <p id="modalDesc" class="text-gray-700 mb-6"></p>
+      <div
+        class="bg-white p-6 rounded-xl max-w-md w-full text-center fade relative"
+      >
         <button
           onclick="closeModal()"
-          class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg"
+          class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
         >
-          Tutup
+          <i class="fas fa-times text-lg"></i>
         </button>
+        <h3
+          id="modalTitle"
+          class="text-xl md:text-2xl font-bold mb-3 text-gray-800"
+        ></h3>
+        <p id="modalPrice" class="text-blue-600 font-bold mb-2"></p>
+        <p id="modalDescription" class="text-gray-700 mb-4 text-sm"></p>
+        <div class="text-left bg-gray-50 p-3 rounded-lg mb-4">
+          <h4 class="font-semibold text-gray-800 mb-1">Fasilitas:</h4>
+          <p id="modalFacilities" class="text-gray-600 text-sm"></p>
+        </div>
+        <a
+          href="https://wa.me/6281234567890"
+          target="_blank"
+          class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded-lg transition inline-block"
+        >
+          <i class="fab fa-whatsapp mr-1"></i> Sewa Sekarang
+        </a>
       </div>
     </div>
 
     <script>
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Optional: Sembunyikan menu saat klik di luar menu
+      document.addEventListener("click", (event) => {
+        if (
+          !mobileMenuButton.contains(event.target) &&
+          !mobileMenu.contains(event.target)
+        ) {
+          mobileMenu.classList.add("hidden");
+        }
+      });
+
+      // Modal Detail Kendaraan
       const modal = document.getElementById("modal");
       const modalTitle = document.getElementById("modalTitle");
-      const modalDesc = document.getElementById("modalDesc");
+      const modalPrice = document.getElementById("modalPrice");
+      const modalDescription = document.getElementById("modalDescription");
+      const modalFacilities = document.getElementById("modalFacilities");
 
       document.querySelectorAll(".card[data-type]").forEach((card) => {
         card.addEventListener("click", () => {
           modalTitle.innerText = card.dataset.name;
-          modalDesc.innerText = "Fasilitas: " + card.dataset.facilities;
+          modalPrice.innerText = card.dataset.price;
+          modalDescription.innerText = card.dataset.description;
+          modalFacilities.innerText = card.dataset.facilities;
           modal.classList.add("active");
         });
       });
